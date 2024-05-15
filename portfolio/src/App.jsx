@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router-dom';
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
@@ -25,10 +26,12 @@ const App = () => {
   return (
     <div id="main">
       <Navbar />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
-      <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+        <Routes>
+          <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+        <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>
   );
 };
