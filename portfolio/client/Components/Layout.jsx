@@ -1,3 +1,5 @@
+import image from "../images/logo.png";
+
 import { Link } from "react-router-dom";
 export default function Layout() {
   return (
@@ -16,6 +18,9 @@ export default function Layout() {
     >
       <h1>My Portfolio</h1>
       <nav>
+        <Link to="/">
+          <img src={image} alt="Logo" style={{ height: "20px" }} />
+        </Link>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/education">Education</Link>
