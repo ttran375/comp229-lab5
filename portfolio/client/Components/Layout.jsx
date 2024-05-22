@@ -16,7 +16,6 @@ export default function Layout() {
         zIndex: 10,
       }}
     >
-      <h1>My Portfolio</h1>
       <nav>
         <Link to="/">
           <img src={image} alt="Logo" style={{ height: "20px" }} />
