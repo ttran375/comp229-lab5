@@ -1,33 +1,42 @@
-import image from "../images/logo.png";
+import { AppBar, Toolbar, IconButton, Typography, Link as MuiLink } from '@mui/material';
+import { Link } from 'react-router-dom';
+import image from '../images/logo.png';
 
-import { Link } from "react-router-dom";
 export default function Layout() {
   return (
-    <div
-      style={{
-        position: "fixed",
-        display: "flex",
-        justifyContent: "center",
-        gap: "2rem",
-        background: "rgba(255,255,255,0.75)",
-        padding: "1rem",
-        top: 0,
-        width: "100%",
-        zIndex: 10,
-      }}
-    >
-      <nav>
-        <Link to="/">
-          <img src={image} alt="Logo" style={{ height: "20px" }} />
-        </Link>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/education">Education</Link>
-        <Link to="/project">Project</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <br />
-      <hr />
-    </div>
+    <AppBar position="fixed" sx={{ background: '#9e9e9e', boxShadow: 'none' }}>
+      <Toolbar sx={{ justifyContent: 'center', gap: '2rem' }}>
+        <IconButton edge="start" color="inherit" aria-label="logo">
+          <Link to="/">
+            <img src={image} alt="Logo" style={{ height: '20px' }} />
+          </Link>
+        </IconButton>
+        <Typography variant="h6" sx={{ color: 'black' }}>
+          <MuiLink component={Link} to="/" color="inherit" underline="none" sx={{ color: 'black' }}>
+            Home
+          </MuiLink>
+        </Typography>
+        <Typography variant="h6" sx={{ color: 'black' }}>
+          <MuiLink component={Link} to="/about" color="inherit" underline="none" sx={{ color: 'black' }}>
+            About
+          </MuiLink>
+        </Typography>
+        <Typography variant="h6" sx={{ color: 'black' }}>
+          <MuiLink component={Link} to="/education" color="inherit" underline="none" sx={{ color: 'black' }}>
+            Education
+          </MuiLink>
+        </Typography>
+        <Typography variant="h6" sx={{ color: 'black' }}>
+          <MuiLink component={Link} to="/project" color="inherit" underline="none" sx={{ color: 'black' }}>
+            Project
+          </MuiLink>
+        </Typography>
+        <Typography variant="h6" sx={{ color: 'black' }}>
+          <MuiLink component={Link} to="/contact" color="inherit" underline="none" sx={{ color: 'black' }}>
+            Contact
+          </MuiLink>
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }
